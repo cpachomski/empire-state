@@ -7,7 +7,7 @@ var EmpireStateBuilding = React.createClass({
 				<MiddleOuterSection  />
 				<MiddleOuterSection  />
 				<BottomOuterSection className="left" />
-				<BottomOuterSection  className="right" />			
+				<BottomOuterSection  className="right" />
 			</div>
 		)
 	}
@@ -27,14 +27,14 @@ var TwoWindows = React.createClass({
 		return(
 			<div className='two-windows'>
 				<Window />
-				<Window />	
+				<Window />
 			</div>
 		)
 	}
 });
 
 var ThreeWindows = React.createClass({
-	render: function(){		
+	render: function(){
 		return (
 			<div className='three-windows'>
 				<Window />
@@ -98,12 +98,45 @@ var MiddleOuterSectionRow = React.createClass({
 var MiddleOuterSection = React.createClass({
 	render: function(){
 		this.middleRows = [];
-		for( i = 0; i < 10; i++){
+		for( i = 0; i < 20; i++){
 			this.middleRows.push(<MiddleOuterSectionRow />)
 		}
 		return (
 			<div className="middle-outer">
 				{this.middleRows}
+			</div>
+		)
+	}
+});
+
+var MainCenterSection = React.createClass({
+	render: function(){
+
+
+		this.centerRows1 = [];
+
+		for (i = 0; i < 20 ; i++){
+			this.centerRows1.push(<TwoWindows/>);
+		};
+
+		return (
+			<div className="main-center">
+					<div className="side-column"></div>
+					<div className="center-column">
+						<div className="OneWindowsColumn">
+							{this.centerRows1}
+						</div>
+						<div className="ThreeWindowsColumn">
+							<div className='left-column'>{this.centerRows1}</div>
+							<div className='center-column'>{this.centerRows1}</div>
+							<div className='right-colum'>{this.centerRows1}</div>
+						</div>
+						<div className="OneWindowsColumn">
+							 {this.centerRows1}
+						</div>
+					</div>
+					<div className="side-column"></div>
+
 			</div>
 		)
 	}
