@@ -6,18 +6,19 @@ var EmpireStateBuilding = React.createFactory(require('./components/EmpireStateB
 window.onload = function() {
 	React.render(EmpireStateBuilding(), document.getElementById('empire-state'));
 	
-	generateDomTreeJSON($('body'), 20, 0, 0, null);
+	generateDomTreeJSON($('#building-container'), 20, 0, 0, null);
 	console.log(DomTreeJSON);
 
-}
 
-//1. for each object
-//     grab it's necessary properties
-//	   create properties object
-//	   find it's children
-//	   create children objects
-//     create edges between parent and children objects
-//     find their children
+	var domGraph = new sigma({
+		graph: DomTreeJSON,
+		container: 'container',
+		settings: {
+			defaultNodeColor: '#2E4372'
+		}
+	});
+
+}
 
 var nodeId = 0;
 var edgeId = 0;
@@ -27,10 +28,6 @@ var DomTreeJSON = {
 };
 
 var generateDomTreeJSON = function(el, size, initY, initX){
-
-	
-
-	
 
 	var $node = el;
 
@@ -53,14 +50,14 @@ var generateDomTreeJSON = function(el, size, initY, initX){
 
 
 		size -= 2;
-		initY += 1;
+		initY += 100;
 		initX = 0;
 
 		$node.children().each(function(index, child){
 			// BUILD EDGE BETWEEN CHILD AND PARENT NODE
 			
 			
-			initX += 1;	
+			initX += 50;	
 			var edge = {};
 			edge['id'] = "e" + edgeId;
 			edge['source'] = node['id'];
