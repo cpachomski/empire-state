@@ -124,16 +124,10 @@ var MainCenterSection = React.createClass({
 			<div className="main-center">
 					<div className="side-column">{this.centerRows1}</div>
 					<div className="center-column">
-						<div className="OneWindowsColumn">
-							{this.centerRows1}
-						</div>
 						<div className="ThreeWindowsColumn">
-							<div className='left-column'>{this.centerRows1}</div>
-							<div className='center-column'>{this.centerRows1}</div>
-							<div className='right-colum'>{this.centerRows1}</div>
-						</div>
-						<div className="OneWindowsColumn">
-							 {this.centerRows1}
+							<div className='left'>{this.centerRows1}</div>
+							<div className='center'>{this.centerRows1}</div>
+							<div className='right'>{this.centerRows1}</div>
 						</div>
 					</div>
 					<div className="side-column">{this.centerRows1}</div>
