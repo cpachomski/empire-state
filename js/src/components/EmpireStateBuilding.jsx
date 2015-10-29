@@ -6,6 +6,7 @@ var EmpireStateBuilding = React.createClass({
 			<div id="building-container">
 				<MiddleOuterSection  />
 				<MiddleOuterSection  />
+				<MainCenterSection />
 				<BottomOuterSection className="left" />
 				<BottomOuterSection  className="right" />
 			</div>
@@ -121,7 +122,7 @@ var MainCenterSection = React.createClass({
 
 		return (
 			<div className="main-center">
-					<div className="side-column"></div>
+					<div className="side-column">{this.centerRows1}</div>
 					<div className="center-column">
 						<div className="OneWindowsColumn">
 							{this.centerRows1}
@@ -135,7 +136,7 @@ var MainCenterSection = React.createClass({
 							 {this.centerRows1}
 						</div>
 					</div>
-					<div className="side-column"></div>
+					<div className="side-column">{this.centerRows1}</div>
 
 			</div>
 		)
