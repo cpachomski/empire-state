@@ -4,7 +4,7 @@ var EmpireStateBuilding = React.createClass({
 	render: function(){
 		return(
 			<div id="building-container">
-				<CenterTopperLarge />
+
 				<MiddleOuterSection  />
 				<MiddleOuterSection  />
 				<MainCenterSection />

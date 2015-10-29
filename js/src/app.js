@@ -6,7 +6,8 @@ var EmpireStateBuilding = React.createFactory(require('./components/EmpireStateB
 window.onload = function() {
 	React.render(EmpireStateBuilding(), document.getElementById('empire-state'));
 	
-	generateDomTreeJSON($('body'), 20, 0, 0, 0, null);
+	generateDomTreeJSON($('body'), 20, 0, 0, null);
+	console.log(DomTreeJSON);
 
 }
 
@@ -19,46 +20,37 @@ window.onload = function() {
 //     find their children
 
 var nodeId = 0;
+var edgeId = 0;
+var DomTreeJSON = {
+	"nodes" : [],
+	"edges" : [],
+};
 
+var generateDomTreeJSON = function(el, size, initY, initX){
 
+	
 
-var generateDomTreeJSON = function(el, size, initY, initX, edgeId, inputObj){
-
-	if (inputObj){
-		DomTreeJSON = inputObj;
-	} else{
-		console.log('build inital dom tree')
-		var DomTreeJSON = {
-			"nodes" : [],
-			"edges" : [],
-		};
-	}
+	
 
 	var $node = el;
-
 
 	// create node for parent
 	var node = {};
 	
-		
-	
-
 	node['id']= 'n' + nodeId;
 
-	console.log(nodeId);
 	node['size'] = size;
 	node['x'] = initX;
 	node['y'] =	initY;
 	node['label'] = $node.prop("tagName").toLowerCase();
 	node['class'] = $node.prop("className").toLowerCase();
 	nodeId +=1;
-	console.log(node['label']);
-	console.log(node['class']);
+
 	DomTreeJSON.nodes.push(node);
 
 	
 	if ($node.children().length > 0 ){
-		console.log('got kids');
+
 
 		size -= 2;
 		initY += 1;
@@ -74,14 +66,14 @@ var generateDomTreeJSON = function(el, size, initY, initX, edgeId, inputObj){
 			edge['source'] = node['id'];
 			edge['target'] = "n" + nodeId;
 			edgeId += 1; 
+			DomTreeJSON.edges.push(edge);
 	
-			generateDomTreeJSON($(child), size, initY, initX, edgeId, DomTreeJSON );
+			generateDomTreeJSON($(child), size, initY, initX );
 		})
 
 	} else{
-		console.log('done. no more kids');
+
 	}
-	console.log(DomTreeJSON);
 	
 }
 
