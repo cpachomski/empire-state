@@ -117,7 +117,7 @@ var MainCenterSection = React.createClass({
 
 		this.centerRows1 = [];
 
-		for (i = 0; i < 40 ; i++){
+		for (i = 0; i < 35 ; i++){
 			this.centerRows1.push(<TwoWindows/>);
 		};
 
