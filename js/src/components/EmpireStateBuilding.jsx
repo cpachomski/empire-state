@@ -4,11 +4,12 @@ var EmpireStateBuilding = React.createClass({
 	render: function(){
 		return(
 			<div id="building-container">
+				<CenterTopperLarge />
 				<MiddleOuterSection  />
 				<MiddleOuterSection  />
 				<MainCenterSection />
-				<BottomOuterSection className="left" />
-				<BottomOuterSection  className="right" />
+				<BottomOuterSection name="left" />
+				<BottomOuterSection  name="right" />
 			</div>
 		)
 	}
@@ -65,7 +66,7 @@ var BottomOuterSection = React.createClass({
 			this.rows.push(<BottomOuterSectionRow />)
 		}
 		return (
-			<div id="bottom-outer">
+			<div id="bottom-outer" className={this.props.name}>
 				{this.rows}
 			</div>
 		)
@@ -116,7 +117,7 @@ var MainCenterSection = React.createClass({
 
 		this.centerRows1 = [];
 
-		for (i = 0; i < 20 ; i++){
+		for (i = 0; i < 40 ; i++){
 			this.centerRows1.push(<TwoWindows/>);
 		};
 
@@ -136,6 +137,19 @@ var MainCenterSection = React.createClass({
 		)
 	}
 });
+
+var CenterTopperLarge = React.createClass({
+	render: function(){
+		return (
+			<div className='center-topper-large'>
+				<div className='side-column'>{this.centerRows1}</div>
+				<div className='side-column'>{this.centerRows1}</div>
+			</div>
+		)
+	}
+})
+
+
 
 
 

@@ -37,7 +37,7 @@ body{
 						&:nth-child(3){
 							left: 0px;
 						}
-						&:nth-child(4){
+						&:nth-child(5){
 							right: 0px;
 						}
 						.bottom-outer-row{
@@ -171,7 +171,7 @@ body{
 						border: 1px solid black;
 						background-color: #AFA282;
 						height: 60%;
-						width: 260px;
+						width: 186px;
 						bottom: 0px;
 						left: 50%;
 						transform: translateX(-50%);
@@ -188,7 +188,7 @@ body{
 								height: 100%;
 								bottom: 0px;
 								overlow-y:hidden;
-								left: 250px;
+								left: 172px;
 								.two-windows{
 									.window{
 										position: relative;
@@ -208,7 +208,7 @@ body{
 									background-color:black;
 
 									width: 9px;
-									height: 9px;
+									height: 10px;
 									position: relative;
 									&:first-child{
 										float: left;
@@ -223,29 +223,104 @@ body{
 							z-index: 2;
 							position: absolute;
 							height: 100%;
-							border: 1px solid black;
+					
 							bottom: 0px;
-							width: 150px;
+							width: 120px;
 							left: 50%;
+							overflow:hidden;
 							transform: translateX(-50%);
 							.left{
 								position: absolute;
 								height: 100%;
-								left: 20px;
+								left: 13px;
 								width: 20px;
-								border: 1px solid black;
+						
+								.two-windows{
+								margin-top: 10px;
+								padding-bottom: 5px;
+								&:before{
+									content:'';
+									clear: both;
+									display: table;
+
+								}
+								.window{
+									background-color:black;
+
+									width: 9px;
+									height: 10px;
+									position: relative;
+									&:first-child{
+										float: left;
+									}
+									&:nth-child(2){
+										float: right;
+									}
+								}
+							}
 
 							}
 							.center{
-								padding-top: 10px;
+								position: absolute;
+								
+								height: 100%;
+								width: 20px;
+								transform: translateX(-50%);
+								left: 50%;
+		
+								.two-windows{
+								margin-top: 10px;
+								padding-bottom: 5px;
+								&:before{
+									content:'';
+									clear: both;
+									display: table;
+
+								}
+								.window{
+									background-color:black;
+
+									width: 9px;
+									height: 10px;
+									position: relative;
+									&:first-child{
+										float: left;
+									}
+									&:nth-child(2){
+										float: right;
+									}
+								}
+							}
 							}
 							.right{
 
 								position: absolute;
 								height: 100%;
-								left: 100px;
+								left: 86px;
 								width: 20px;
-								border: 1px solid black;
+								.two-windows{
+								margin-top: 10px;
+								padding-bottom: 5px;
+								&:before{
+									content:'';
+									clear: both;
+									display: table;
+
+								}
+								.window{
+									background-color:black;
+
+									width: 9px;
+									height: 10px;
+									position: relative;
+									&:first-child{
+										float: left;
+									}
+									&:nth-child(2){
+										float: right;
+									}
+								}
+							}
 							}
 						}
 					}
