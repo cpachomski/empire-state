@@ -39,8 +39,7 @@ var generateDomTreeJSON = function(el, size, initY, initX){
 	node['size'] = size;
 	node['x'] = initX;
 	node['y'] =	initY;
-	node['label'] = $node.prop("tagName").toLowerCase();
-	node['class'] = $node.prop("className").toLowerCase();
+	node['label'] = $node.prop("className").toLowerCase();
 	nodeId +=1;
 
 	DomTreeJSON.nodes.push(node);
@@ -51,20 +50,21 @@ var generateDomTreeJSON = function(el, size, initY, initX){
 
 		size -= 2;
 		initY += 100;
-		initX = 0;
+		initX = -20;
 
-		$node.children().each(function(index, child){
+		$node.children().each(function(i, child){
 			// BUILD EDGE BETWEEN CHILD AND PARENT NODE
-			
-			
-			initX += 50;	
+			initX += 10;
 			var edge = {};
 			edge['id'] = "e" + edgeId;
 			edge['source'] = node['id'];
 			edge['target'] = "n" + nodeId;
 			edgeId += 1; 
-			DomTreeJSON.edges.push(edge);
-	
+			DomTreeJSON.edges.push(edge);	
+		});
+
+		$node.children().each(function(i, child){	
+			initX += 25;
 			generateDomTreeJSON($(child), size, initY, initX );
 		})
 
