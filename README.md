@@ -5,7 +5,7 @@
 
 ###[Go to app](http:nyc-buildings-as-graphs.surge.sh)
 
-<p>
+Using [Sigma.js](http://sigmajs.org) for graph visualization
 
-</p>[Sigma.js]
+
 
